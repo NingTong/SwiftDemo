@@ -1,0 +1,61 @@
+PODS:
+  - Alamofire (5.0.5)
+  - ATNavigationController (0.0.18)
+  - Kingfisher (5.13.2):
+    - Kingfisher/Core (= 5.13.2)
+  - Kingfisher/Core (5.13.2)
+  - MJRefresh (3.3.1)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - ReactiveSwift (6.2.1)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - SDAutoLayout (2.2.1)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - ATNavigationController
+  - Kingfisher
+  - MJRefresh
+  - Moya
+  - ReactiveSwift
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
+  - SDAutoLayout
+  - SVProgressHUD
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - ATNavigationController
+    - Kingfisher
+    - MJRefresh
+    - Moya
+    - ReactiveSwift
+    - RxCocoa
+    - RxSwift
+    - SDAutoLayout
+    - SVProgressHUD
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  ATNavigationController: e938686c363847103539c5aad224fa73661bb878
+  Kingfisher: d342c8354c10c3d85a27d6d4c42c41285924b898
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  ReactiveSwift: 07ddf579f4eb3ee3bd656214f0461aaf2c0fd639
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SDAutoLayout: 8bf6b3bbc8b01f775d4defbb4fda2ace805461be
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 2e874a1b685c561409b810e8a50092aeac780a51
+
+COCOAPODS: 1.9.3

@@ -1,0 +1,19 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+use_frameworks!
+
+platform :ios, "10.0"
+inhibit_all_warnings!
+
+target 'SwiftDemo' do
+    pod 'RxSwift', '~> 4.0'
+    pod 'RxCocoa', '~> 4.0'
+    pod 'MJRefresh'
+    pod 'Moya'
+    pod 'SwiftyJSON'
+    pod 'Kingfisher'
+    pod 'SVProgressHUD'
+    pod 'SDAutoLayout'
+    pod 'ATNavigationController'
+    pod 'ReactiveSwift'
+end

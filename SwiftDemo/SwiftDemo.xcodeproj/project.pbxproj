@@ -191,6 +191,12 @@
 		84C581E224D95FA6006145A6 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				84F3771A24DA85BA00ED31CE /* Main */,
+				84F3771924DA85B800ED31CE /* Home */,
+				84F3771824DA85B600ED31CE /* Live */,
+				84F3771724DA85B300ED31CE /* Follow */,
+				84F3771624DA85B100ED31CE /* Profile */,
+				84F3771524DA85B000ED31CE /* Tools */,
 				84C581E324D95FA6006145A6 /* Define */,
 				84C581EA24D95FA6006145A6 /* Login */,
 			);
@@ -216,6 +222,48 @@
 				84C581EB24D95FA6006145A6 /* LoginVC.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		84F3771524DA85B000ED31CE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		84F3771624DA85B100ED31CE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		84F3771724DA85B300ED31CE /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		84F3771824DA85B600ED31CE /* Live */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		84F3771924DA85B800ED31CE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		84F3771A24DA85BA00ED31CE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		908644943CF1A502C91E2DD0 /* Frameworks */ = {
