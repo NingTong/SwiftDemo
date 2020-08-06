@@ -1,13 +1,10 @@
 /// 包含第三方 和 应用内业务的实现，减轻入口代码压力
-import SVProgressHUD
+import UIKit
 
 extension AppDelegate {
     
     // MARK: - 初始化服务
     func initService() {
-        // SVProgressHUD 配置
-        SVProgressHUD.setMinimumDismissTimeInterval(TimeInterval(CGFloat.greatestFiniteMagnitude))
-        
         // 防止 button 重复点击
         UIButton.appearance().isExclusiveTouch = true
     }
@@ -17,7 +14,7 @@ extension AppDelegate {
         // 设置根视图控制器
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = .white
-        self.window?.rootViewController = ViewController.init()
+        self.window?.rootViewController = RootTabBarVC.init()
         self.window?.makeKeyAndVisible()
     }
     

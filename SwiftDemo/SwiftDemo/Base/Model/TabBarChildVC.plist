@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>imageName</key>
+		<string>new_icn_1</string>
+		<key>selectImageName</key>
+		<string>new_icn_1h</string>
+		<key>title</key>
+		<string>首页</string>
+		<key>vc</key>
+		<string>HomeVC</string>
+	</dict>
+	<dict>
+		<key>imageName</key>
+		<string>new_icn_2</string>
+		<key>selectImageName</key>
+		<string>new_icn_2h</string>
+		<key>title</key>
+		<string>共振</string>
+		<key>vc</key>
+		<string>AssetsVC</string>
+	</dict>
+	<dict>
+		<key>imageName</key>
+		<string>new_icn_3</string>
+		<key>selectImageName</key>
+		<string>new_icn_3h</string>
+		<key>title</key>
+		<string>生态</string>
+		<key>vc</key>
+		<string>EcologyVC</string>
+	</dict>
+	<dict>
+		<key>imageName</key>
+		<string>new_icn_4</string>
+		<key>selectImageName</key>
+		<string>new_icn_4h</string>
+		<key>title</key>
+		<string>竞猜</string>
+		<key>vc</key>
+		<string>QuizVC</string>
+	</dict>
+	<dict>
+		<key>imageName</key>
+		<string>new_icn_5</string>
+		<key>selectImageName</key>
+		<string>new_icn_5h</string>
+		<key>title</key>
+		<string>我的</string>
+		<key>vc</key>
+		<string>MineVC</string>
+	</dict>
+</array>
+</plist>
