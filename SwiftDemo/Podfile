@@ -1,13 +1,18 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, "10.0"
+platform :ios, "12.0"
 inhibit_all_warnings!
 
 target 'SwiftDemo' do
-    pod 'RxSwift', '~> 4.0'
-    pod 'RxCocoa', '~> 4.0'
-    pod 'Moya'
-    pod 'Kingfisher'
-    pod 'SwiftyJSON'
-    pod 'ReactiveSwift'
+  use_frameworks!
+  
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'Alamofire'       # 用于网络请求
+  pod 'Moya/RxSwift'    # 用于网络请求
+  pod 'SnapKit'         # 跟Masonry一样是用来设置约束的，swift版
+  pod 'Kingfisher'      # SDWebImage swift 版
+  pod 'SwiftyJSON'      # Json数据转换
+  pod 'SVProgressHUD'   # HUD
+  pod 'RxDataSources', '~> 3.0'  # RxSwift中用于设置UITableView/UICollectionView data sources
 end

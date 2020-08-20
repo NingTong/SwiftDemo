@@ -40,7 +40,7 @@ extension UIColor {
         }
         // String should be 6 or 8 characters
         if cString.count < 6 {
-            print("colorWithHexString is wrong！")
+            print(message: "colorWithHexString is wrong！")
             return UIColor.clear
         }
         // Separate into r, g, b substrings

@@ -7,14 +7,33 @@ class RootTabBarVC: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 基本设置
         self.delegate = self
+        self.tabBar.backgroundColor = kBaseColor
         
-        // 设置背景
-        UITabBar.appearance().shadowImage = UIImage()
-        UITabBar.appearance().backgroundImage = UIImage()
+        // tabbar 的设置
+        setTabBar()
         
         // 添加子控制器
-        self.addTabBarView()
+        addTabBarView()
+    }
+    
+    // MARK: - tabbar 的设置
+    func setTabBar() {
+        // 去掉黑线
+        self.tabBar.shadowImage = UIImage.init()
+        self.tabBar.backgroundImage = UIImage.init()
+        // 阴影设置
+        let path = CGMutablePath()
+        path.addRect(self.tabBar.bounds)
+        self.tabBar.layer.shadowPath = path
+        path.closeSubpath()
+        
+        self.tabBar.layer.shadowColor = UIColor.black.cgColor
+        self.tabBar.layer.shadowOffset = CGSize.init(width: 0, height: -0.5)
+        self.tabBar.layer.shadowRadius = 4
+        self.tabBar.layer.shadowOpacity = 0.4
+        self.tabBar.clipsToBounds = false
     }
     
     // MARK: - 添加自定义 tabbar
@@ -38,11 +57,18 @@ class RootTabBarVC: UITabBarController, UITabBarControllerDelegate {
         for i in 0..<tabBarView.datas!.count {
             let dic:NSDictionary! = (tabBarView.datas![i] as! NSDictionary)
             
-            let vcClass: AnyClass! = NSClassFromString(dic["vc"] as! String)
+            // 从Info.plist中获取bundle的名字
+            let namespace = Bundle.main.infoDictionary!["CFBundleName"] as! String
             
-            let vc: UIViewController! = (vcClass.init() as! UIViewController)
+            // 0.将控制器的字符串转成控制器类型
+            let classFromStr: AnyClass? = NSClassFromString(namespace + "." + (dic["vc"] as! String))
             
-            self.setUpChildViewController(vc: vc, title: (dic["title"] as! String))
+            let viewControllerClass = classFromStr as! UIViewController.Type
+            
+            // 1.创建控制器对象
+            let viewController = viewControllerClass.init()
+            
+            self.setUpChildViewController(vc: viewController, title: (dic["title"] as! String))
         }
     }
     
@@ -57,7 +83,7 @@ class RootTabBarVC: UITabBarController, UITabBarControllerDelegate {
     
     // MARK: - UITabBarControllerDelegate
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        tabBarView .selectwithInteger(integer: tabBarController.selectedIndex)
+        tabBarView.selectwithInteger(integer: tabBarController.selectedIndex)
     }
 }
 

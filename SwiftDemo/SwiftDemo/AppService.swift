@@ -16,6 +16,15 @@ extension AppDelegate {
         self.window?.backgroundColor = .white
         self.window?.rootViewController = RootTabBarVC.init()
         self.window?.makeKeyAndVisible()
+        
+        // 导航栏设置
+        let navigationBar = UINavigationBar.appearance()
+        navigationBar.isTranslucent = false
+        navigationBar.barTintColor = kBaseColor
+        navigationBar.tintColor = .white
+        navigationBar.barStyle = .black
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: bFont(17)]
+        navigationBar.shadowImage = UIImage.init()
     }
     
     // MARK: - 监听网络状态

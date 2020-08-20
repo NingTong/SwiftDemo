@@ -31,15 +31,16 @@ class TabbarView: UIView {
                 
                 // 设置 button 的宽高
                 let width: CGFloat = kScreenW/CGFloat(datas!.count)
-                let height: CGFloat = kIphoneX ? (49 + 14) : 49
+                let height: CGFloat = kIphoneX ? (45 + 14) : 45
                 
                 // 创建 button
-                let btn = UIButton.cButtonTitle(title: dic["title"] as! String, font: sFont(kIphoneX ? 12 : 10), titleColor: .white)
+                let btn = UIButton.cButtonTitle(title: dic["title"] as! String, font: sFont(kIphoneX ? 12 : 8), titleColor: .white)
                 btn.frame = CGRect(x: width*CGFloat(i), y: 3, width: width, height: height)
                 btn.setTitleColor(rgba(249, 196, 70, 1), for: .selected)
                 btn.setImage(UIImage.init(named: dic["imageName"] as! String), for: .normal)
                 btn.setImage(UIImage.init(named: dic["selectImageName"] as! String), for: .selected)
-                btn.buttonInsetStyle(InsetStyle: .Top, space: kIphoneX ? 12 : 8)
+                btn.isUserInteractionEnabled = false
+                btn.buttonInsetStyle(InsetStyle: .Top, space: kIphoneX ? 10 : 4)
                 self.addSubview(btn)
                 buttons?.add(btn)
                 
