@@ -8,22 +8,25 @@
 
 import UIKit
 
-import SnapKit
-
-class MineVC: BaseVC, HideNavigationBarProtocol {
+class MineVC: BaseVC {
     lazy var viewModel = MineViewModel()
     
     lazy var tableView: UITableView = {
-        let tableView = UITableView.init(frame: self.view.bounds, style: .plain)
+        let tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - TabbarHeight - NavHeight), style: .plain)
         tableView.backgroundColor = kBaseColor
         tableView.tableFooterView = UIView()
         tableView.register(UINib(nibName: "MineCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.rowHeight = 58
+        // 头部 view
+        let headerView = MineHeaderView.init(frame: CGRect(x: 0, y: 0, width: kScreenW, height: 148 + (kScreenW - 40)/(752/216) + 10))
+        tableView.tableHeaderView = headerView
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = ""
         
         // UI 初始化
         setupSubViews()
@@ -35,9 +38,9 @@ class MineVC: BaseVC, HideNavigationBarProtocol {
         tableView.rx.itemSelected.subscribe(onNext: { (indexPath) in
             switch indexPath.row {
             case 0:
-                self.navigationController?.pushViewController(SwitchAccountVC.init(), animated: true)
-            case 1: break
-                
+            self.navigationController?.pushViewController(SwitchAccountVC.init(), animated: true)
+            case 1:
+            print(message: UserSingleton.shared.userInfo)
             default : break
             }
         }).disposed(by: disposeBag)
@@ -45,6 +48,15 @@ class MineVC: BaseVC, HideNavigationBarProtocol {
     
     // UI 初始化
     func setupSubViews() {
+        // 添加导航栏右侧按钮
+        let rightButton = UIButton()
+        rightButton.setImage(UIImage(named: "mine_msgBtn"), for: .normal)
+        self.setRightItem(view: rightButton)
+        rightButton.rx.tap.subscribe(onNext: { _ in
+            // 跳转到系统消息
+            self.navigationController?.pushViewController(ManagementAccountVC.init(), animated: true)
+        }).disposed(by: disposeBag)
+        
         // 添加 tableView
         view.addSubview(tableView)
     }

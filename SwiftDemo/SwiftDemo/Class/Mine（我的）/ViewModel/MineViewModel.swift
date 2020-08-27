@@ -8,8 +8,6 @@
 
 import UIKit
 
-import RxSwift
-
 class MineViewModel: NSObject {
     let data = Observable.of([
         Mine(text: "切换账号", detailsText: "", imageName: "切换账号", access: true),

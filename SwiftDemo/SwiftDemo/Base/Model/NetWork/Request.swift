@@ -1,20 +1,26 @@
 
 import Alamofire
 import Foundation
-import SwiftyJSON
 import Moya
+import CleanJSON
 
 /// 超时时长
 private var requestTimeOut: Double = 30
 
 /// 成功数据的回调
-typealias success = ((String) -> Void)
+typealias success = ((Data) -> Void)
 
 /// 失败的回调
-typealias failure = ((String) -> Void)
+typealias failure = (() -> Void)
 
 /// 网络错误的回调
 typealias errors = (() -> Void)
+
+struct RequestModel: Codable {
+    let code: Int
+    
+    let msg: String
+}
 
 /// 网络请求的基本设置,这里可以拿到是具体的哪个网络请求，可以在这里做一些设置
 private let endpointClosure = { (target: API) -> Endpoint in
@@ -70,27 +76,31 @@ func NetWorkRequest(_ target: API, completion: @escaping success, failed: failur
         return nil
     }
     return Provider.request(target) { result in
-        // 隐藏hud
-        ProgressHUD.dismissHUD()
         switch result {
         case let .success(response):
             do {
-                let jsonData = try JSON(data: response.data)
-                print(message: jsonData)
+                let json = String(data: response.data, encoding: String.Encoding.utf8)
+                
+                print(message: json)
+                let decoder = CleanJSONDecoder()
+                let model = try decoder.decode(RequestModel.self, from: response.data)
 
-                if jsonData[Request_Code].stringValue == "1"{
-                    completion(String(data: response.data, encoding: String.Encoding.utf8)!)
+                if model.code == 1 {
+                    // 隐藏hud
+                    ProgressHUD.dismissHUD()
+                    completion(response.data)
                 }
                 else {
-                    failed?(String(data: response.data, encoding: String.Encoding.utf8)!)
-
-                    print(message: "flag不为1 HUD显示后台返回message" + "\(jsonData[Request_Message].stringValue)")
+                    // 显示后台返回的失败原因
+                    ProgressHUD.showInfoMsg(model.msg)
+                    failed?()
                 }
 
             } catch {}
         case let .failure(error):
+            // 显示网络请求失败的原因
+            ProgressHUD.showInfoMsg(error.localizedDescription)
             // 网络连接失败，提示用户
-            print(message: "网络连接失败\(error)")
             errorResult?()
         }
     }

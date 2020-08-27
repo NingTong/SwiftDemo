@@ -12,7 +12,7 @@ target 'SwiftDemo' do
   pod 'Moya/RxSwift'    # 用于网络请求
   pod 'SnapKit'         # 跟Masonry一样是用来设置约束的，swift版
   pod 'Kingfisher'      # SDWebImage swift 版
-  pod 'SwiftyJSON'      # Json数据转换
+  pod 'CleanJSON'       # Json数据转换
   pod 'SVProgressHUD'   # HUD
   pod 'RxDataSources', '~> 3.0'  # RxSwift中用于设置UITableView/UICollectionView data sources
 end

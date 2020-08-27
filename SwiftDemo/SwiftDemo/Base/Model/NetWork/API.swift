@@ -7,6 +7,8 @@ enum API {
     case user_info                                              // 用户信息
     
     case asset_get_asset(params: Dictionary<String, Any>)       // 用户资产
+    
+    case computing_machine_computing_machine_position_list      // 算力机位
 }
 
 extension API: TargetType {
@@ -22,12 +24,15 @@ extension API: TargetType {
             
         case .asset_get_asset:
             return "/asset/get_asset"
+            
+        case .computing_machine_computing_machine_position_list:
+            return "/computing/machine/computing_machine_position_list"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .user_info, .asset_get_asset:
+        case .user_info, .asset_get_asset, .computing_machine_computing_machine_position_list:
             return .get
         }
     }
@@ -38,7 +43,7 @@ extension API: TargetType {
     
     var task: Task {
         switch self {
-        case .user_info:
+        case .user_info, .computing_machine_computing_machine_position_list:
             return .requestPlain
         
         case let .asset_get_asset(params):

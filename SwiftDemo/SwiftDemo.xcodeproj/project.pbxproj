@@ -22,6 +22,11 @@
 		846AEB9B24ECC7B3002547F2 /* ManagementAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AEB9A24ECC7B3002547F2 /* ManagementAccountVC.swift */; };
 		846AEB9D24ED051C002547F2 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AEB9C24ED051C002547F2 /* UserInfoModel.swift */; };
 		846AEBA024ED2CAD002547F2 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AEB9F24ED2CAD002547F2 /* ViewModelType.swift */; };
+		846AEBA924F4AAA9002547F2 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AEBA824F4AAA9002547F2 /* UserSingleton.swift */; };
+		846AEBAB24F4F9AE002547F2 /* MineHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AEBAA24F4F9AE002547F2 /* MineHeaderView.swift */; };
+		846AEBBC24F75A6C002547F2 /* ViewKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AEBBB24F75A6C002547F2 /* ViewKit.swift */; };
+		846AEBBE24F75AA8002547F2 /* ColorKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AEBBD24F75AA8002547F2 /* ColorKit.swift */; };
+		846AEBC624F7C63F002547F2 /* LabelKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AEBC524F7C63F002547F2 /* LabelKit.swift */; };
 		84C581A724D95F0E006145A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C581A624D95F0E006145A6 /* AppDelegate.swift */; };
 		84C581B124D95F0E006145A6 /* SwiftDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84C581AF24D95F0E006145A6 /* SwiftDemo.xcdatamodeld */; };
 		84C581B324D95F0F006145A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C581B224D95F0F006145A6 /* Assets.xcassets */; };
@@ -79,6 +84,11 @@
 		846AEB9A24ECC7B3002547F2 /* ManagementAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementAccountVC.swift; sourceTree = "<group>"; };
 		846AEB9C24ED051C002547F2 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		846AEB9F24ED2CAD002547F2 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		846AEBA824F4AAA9002547F2 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
+		846AEBAA24F4F9AE002547F2 /* MineHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineHeaderView.swift; sourceTree = "<group>"; };
+		846AEBBB24F75A6C002547F2 /* ViewKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewKit.swift; sourceTree = "<group>"; };
+		846AEBBD24F75AA8002547F2 /* ColorKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorKit.swift; sourceTree = "<group>"; };
+		846AEBC524F7C63F002547F2 /* LabelKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelKit.swift; sourceTree = "<group>"; };
 		84C581A324D95F0E006145A6 /* Sports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C581A624D95F0E006145A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C581B024D95F0E006145A6 /* SwiftDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftDemo.xcdatamodel; sourceTree = "<group>"; };
@@ -157,6 +167,7 @@
 			children = (
 				846AEB8D24EBDDC8002547F2 /* MineCell.swift */,
 				846AEB8E24EBDDC8002547F2 /* MineCell.xib */,
+				846AEBAA24F4F9AE002547F2 /* MineHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -358,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				84C581EB24D95FA6006145A6 /* LoginVC.swift */,
+				846AEBA824F4AAA9002547F2 /* UserSingleton.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -409,7 +421,10 @@
 		84F3773924DAB80100ED31CE /* Tools（常用工具） */ = {
 			isa = PBXGroup;
 			children = (
+				846AEBBB24F75A6C002547F2 /* ViewKit.swift */,
 				84F3773A24DAB89000ED31CE /* ButtonInsets.swift */,
+				846AEBBD24F75AA8002547F2 /* ColorKit.swift */,
+				846AEBC524F7C63F002547F2 /* LabelKit.swift */,
 				846AEB8724EBAFE4002547F2 /* ProgressHUD.swift */,
 				846AEB9F24ED2CAD002547F2 /* ViewModelType.swift */,
 			);
@@ -610,6 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8461E92E24E2788A007282D0 /* DebugNavigationVC.swift in Sources */,
+				846AEBBE24F75AA8002547F2 /* ColorKit.swift in Sources */,
 				84F3773B24DAB89000ED31CE /* ButtonInsets.swift in Sources */,
 				846AEB9924ECC6F3002547F2 /* SwitchAccountVC.swift in Sources */,
 				84F3773824DAA4BB00ED31CE /* Common.swift in Sources */,
@@ -617,8 +633,11 @@
 				8461E95124E68D56007282D0 /* RootNavigationVC.swift in Sources */,
 				846AEBA024ED2CAD002547F2 /* ViewModelType.swift in Sources */,
 				84F3772E24DA92FE00ED31CE /* QuizVC.swift in Sources */,
+				846AEBA924F4AAA9002547F2 /* UserSingleton.swift in Sources */,
 				84F3773024DA930600ED31CE /* MineVC.swift in Sources */,
+				846AEBC624F7C63F002547F2 /* LabelKit.swift in Sources */,
 				846AEB9B24ECC7B3002547F2 /* ManagementAccountVC.swift in Sources */,
+				846AEBBC24F75A6C002547F2 /* ViewKit.swift in Sources */,
 				846AEB8824EBAFE4002547F2 /* ProgressHUD.swift in Sources */,
 				846AEB8A24EBCB60002547F2 /* MineViewModel.swift in Sources */,
 				846AEB8C24EBCCDE002547F2 /* MineModel.swift in Sources */,
@@ -633,6 +652,7 @@
 				84F3773724DAA4BB00ED31CE /* UIColor+WUIKit.swift in Sources */,
 				846AEB8224EA80A2002547F2 /* MoyaConfig.swift in Sources */,
 				846AEB8024EA7E2F002547F2 /* API.swift in Sources */,
+				846AEBAB24F4F9AE002547F2 /* MineHeaderView.swift in Sources */,
 				84C581F124D95FA6006145A6 /* LoginVC.swift in Sources */,
 				84C581F024D95FA6006145A6 /* AppService.swift in Sources */,
 				84C581A724D95F0E006145A6 /* AppDelegate.swift in Sources */,

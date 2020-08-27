@@ -1,6 +1,16 @@
 /// 包含第三方 和 应用内业务的实现，减轻入口代码压力
 import UIKit
 
+@_exported import RxSwift
+
+@_exported import RxCocoa
+
+@_exported import CleanJSON
+
+@_exported import SnapKit
+
+@_exported import SVProgressHUD
+
 extension AppDelegate {
     
     // MARK: - 初始化服务

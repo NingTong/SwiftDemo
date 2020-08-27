@@ -70,7 +70,7 @@ let kIphoneX = (kScreenH > 780.0)
 
 //获取状态栏、标题栏、导航栏高度
 let StatusBarH: CGFloat = kIphoneX ? 44 : 20
-let NavHeight: CGFloat =  kIphoneX ? 88 : 44
+let NavHeight: CGFloat =  kIphoneX ? 88 : 64
 let TabbarHeight: CGFloat = kIphoneX ? 83 : 49
 
 // 注册通知
@@ -99,6 +99,30 @@ func sFont(_ a: CGFloat) -> UIFont {
 }
 func bFont(_ a: CGFloat) -> UIFont {
     return UIFont.boldSystemFont(ofSize: a)
+}
+
+// 圆角边框阴影
+func ViewRadius(view: UIView, radius: CGFloat) {
+    view.layer.cornerRadius = radius
+    view.layer.masksToBounds = true
+}
+
+func ViewBorderRadius(view: UIView, radius: CGFloat, width: CGFloat, color: UIColor) {
+    view.layer.cornerRadius = radius
+    view.layer.masksToBounds = true
+    view.layer.borderWidth = width
+    view.layer.borderColor = color.cgColor
+}
+
+// 根据文字内容和字体返回宽高
+func textW(text: String!, font: UIFont!) -> CGFloat {
+    let rect = NSString(string: text).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: font.pointSize + 6), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font as Any], context: nil)
+    return ceil(rect.width)
+}
+
+func textH(text: String!, font: UIFont!, width: CGFloat) -> CGFloat {
+    let rect = NSString(string: text).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)), options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font as Any], context: nil)
+    return ceil(rect.height)
 }
 
 /**

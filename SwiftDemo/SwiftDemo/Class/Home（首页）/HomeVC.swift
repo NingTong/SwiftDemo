@@ -9,6 +9,7 @@
 import UIKit
 
 class HomeVC: BaseVC, HideNavigationBarProtocol {
+    var btn = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,17 +18,11 @@ class HomeVC: BaseVC, HideNavigationBarProtocol {
         button.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(tapped(sender:)), for: .touchUpInside)
+        btn = button
     }
     
     @objc func tapped(sender: UIButton) {
 //        self.navigationController?.pushViewController(NextVC.init(), animated: true)
-        ProgressHUD.showLoading("加载中....")
-        NetWorkRequest(.user_info, completion: { (responseString) -> (Void) in
-
-        }, failed: nil, errorResult: nil)
-//
-//        NetWorkRequest(.asset_get_asset(params: ["currencyName" : "SAS", "page" : "0", "size" : "10"]), completion: { (responseString) -> (Void) in
-//
-//        }, failed: nil, errorResult: nil)
+        UserSingleton.shared.loadUserInfo()
     }
 }
